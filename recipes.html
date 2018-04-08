@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>The MOM</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/one-page-wonder.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Log In</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="masthead text-center text-black" style="background-image: url('./img/food.jpg')">
+    <div class="masthead-content">
+      <div class="container">
+        <h1 class="masthead-heading mb-0">Home-made recipes</h1>
+        <h2 class="masthead-subheading mb-0"></h2>
+        <a href="#" class="btn btn-primary btn-xl rounded-pill mt-5"data-toggle="modal" data-target="#exampleModal"> create new recipes</a>
+      </div>
+    </div>
+    <!-- <div class="bg-circle-1 bg-circle"></div>
+      <div class="bg-circle-2 bg-circle"></div>
+      <div class="bg-circle-3 bg-circle"></div>
+      <div class="bg-circle-4 bg-circle"></div> -->
+  </header>
+
+  <body>
+    <section>
+      <div class="p-5">
+        <center>
+          <h2 align="center" class="display-4">Your favourite recipes</h2>
+        </center>
+      </div>
+    </section>
+
+    <section>
+      <div class="col-lg-6">
+        <div class="p-5">
+          <h1>Homemade Mac and Cheese</h1>
+          <h3> Ingredients</h3>
+          <p id="item" ></p>
+          <h3> Direction</h3>
+          <p id="description"></p>
+          </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add new recipes</h5>
+            <div>
+              
+                </div>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Recipe title : 
+            <form >
+              <input text-align= "right" type="text" id="fname" name="firstname" placeholder="Recipe name..">
+              </form>
+              Ingredients : 
+            <form >
+              <input text-align= "right" type="text" id="fname" name="firstname" placeholder="ingredients..">
+              </form>
+              Direction : 
+            <form >
+              <input text-align= "right" type="text" id="fname" name="firstname" placeholder="direction..">
+              </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+
+  <!-- Footer -->
+  <footer class="py-5 bg-black">
+    <div class="container">
+      <p class="m-0 text-center text-white small">Copyright &copy; Your Website 2018</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script> $.get('http://172.31.98.7:3000/recipes', function(data, status){
+      data = $.parseJSON(data)
+      $("#item").html(data[0]['Items'])
+
+      $("#description").html(data[0]['description'])
+  })</script>
+
+
+</body>
+
+</html>
